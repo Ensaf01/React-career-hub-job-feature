@@ -1,7 +1,14 @@
+import { Link } from 'react-router-dom';
 import loc from '../../assets/icons/Location.png'
 import sala from '../../assets/icons/money.png'
+import { ToastContainer, toast } from 'react-toastify';
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, location, job_type, remote_or_onsite, salary } = job;
+    const { id, logo, job_title, company_name, location, job_type, remote_or_onsite, salary } = job;
+
+    const handleViewJob = () => {
+         toast("Wow so easy!");
+    }
+
     return (
         <div className="m-2 p-5 border-2 rounded-xl ">
             <img className="w-30 h-20" src={logo} alt="" />
@@ -20,7 +27,13 @@ const Job = ({ job }) => {
                     <p>{salary}</p>
                 </div>
             </div>
-            <button className='bg-indigo-500 opacity-75 p-2 rounded-xl mt-5 text-white font-semibold'>View Details</button>
+            <Link to={`job/${id}`}>
+                <button onClick={handleViewJob}
+                    className='bg-indigo-500 opacity-75 p-2 rounded-xl mt-5 text-white font-semibold'>View Details</button>
+            </Link>
+            <ToastContainer />
+
+
 
 
 
