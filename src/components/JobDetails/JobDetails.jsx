@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../Utility/LocalStorage";
 
+
 const JobDetails = () => {
     const jobs = useLoaderData() // get full array
     const { id } = useParams() //just get id string '1'/ '2' / '3' etc
@@ -18,6 +19,7 @@ const JobDetails = () => {
         saveJobApplication(idint)
     }
     return (
+        
         <div className="mb-5 mt-5">
             <h1 className="text-4xl text-center font-bold">Job Details</h1>
 
@@ -80,6 +82,7 @@ const JobDetails = () => {
 
             </div>
             <ToastContainer />
+            
         </div>
     );
 };
