@@ -15,7 +15,7 @@ const JobDetails = () => {
     console.log(job)
 
     const handleApplyJob =()=>{
-        toast("good jfdgjd")
+        toast("Apply complete")
         saveJobApplication(idint)
     }
     return (

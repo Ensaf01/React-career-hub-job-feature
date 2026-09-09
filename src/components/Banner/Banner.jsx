@@ -1,4 +1,4 @@
-import userImage from '../../assets/images/user.png'
+import userImage from '../../assets/images/user1.jpg'
 const Banner = () => {
     return (
         <div className='grid grid-cols-2 items-center bg-purple-100 rounded-lg p-3'>
@@ -9,7 +9,7 @@ const Banner = () => {
 
             </div>
             <div>
-                <img src={userImage} alt="" />
+                <img className='rounded-lg' src={userImage} alt="" />
             </div>
 
         </div>
