@@ -5,7 +5,11 @@ import sala from '../../assets/icons/money.png'
 import { getStoreJobId } from "../../Utility/LocalStorage"
 const Applied = () => {
     const [appliedAllJobs, setAppliedAllJobs] = useState([]);
+    const [filterJob, setFilterJob] =useState([])
     const jobs = useLoaderData(); // all data load from json file 
+
+
+
 
     useEffect(() => {
 
@@ -27,16 +31,42 @@ const Applied = () => {
             }
             // console.log(jobs,storeJobIds,jobsApplied)
             setAppliedAllJobs(jobsApplied);
+            setFilterJob(jobsApplied);
         }
 
-    }, [])
-    
+    }, [jobs])
+
+    const handleFilterJob =(filter) =>{
+        if(filter ==='all'){
+            setFilterJob(appliedAllJobs)
+        }
+        else if(filter ==='remote'){
+            const remoteJob=appliedAllJobs.filter (job => job.remote_or_onsite ==='Remote')
+            setFilterJob(remoteJob)
+        }
+        else{
+            const OnsiteJob=appliedAllJobs.filter (job => job.remote_or_onsite ==='Onsite')
+            setFilterJob(OnsiteJob)
+        }
+    }
+
 
     return (
-        <div className="border p-3">
+        <div className="border-2 border-blue-400 p-3">
+            {/* for filter */}
+            <div className="text-end mb-2">
+                <details className="dropdown ">
+                <summary className="btn btn-primary">open or close</summary>
+                <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <li onClick={()=>handleFilterJob('all')}><a>All</a></li>
+                    <li onClick={()=>handleFilterJob('remote')}><a>Remote Jobs</a></li>
+                     <li onClick={()=>handleFilterJob('onsite')}><a>Onsite Jobs</a></li>
+                </ul>
+            </details>
+            </div>
 
             {
-                appliedAllJobs.map((jobx, ind) =>
+                filterJob.map((jobx, ind) =>
                     <span key={ind}>
                         <div className="grid grid-cols-4 text-start items-center gap-5 rounded-md border-2 p-3 mb-3">
                             <div className="bg-slate-400 col-span-1 p-5 w-max rounded-lg mb-2">
@@ -60,17 +90,17 @@ const Applied = () => {
                                 </div>
 
                             </div>
-                            
+
                             <div className="col-span-1">
                                 <Link to={`/job/${jobx.id}`}>
                                     <button
                                         className='bg-indigo-500 opacity-75 p-2 rounded-xl mt-5 text-white font-semibold'>View Details</button>
                                 </Link>
-                                
+
 
                             </div>
 
-                         
+
                         </div>
 
 
