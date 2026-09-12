@@ -68,7 +68,7 @@ const Applied = () => {
             {
                 filterJob.map((jobx, ind) =>
                     <span key={ind}>
-                        <div className="grid grid-cols-4 text-start items-center gap-5 rounded-md border-2 p-3 mb-3">
+                        <div className="grid grid-cols-3 md:grid-cols-4 text-start items-center  gap-12 md:gap-5 rounded-md border-2 p-3 mb-3">
                             <div className="bg-slate-400 col-span-1 p-5 w-max rounded-lg mb-2">
                                 <img className="w-20 h-30 " src={jobx.logo} alt="" />
                             </div>

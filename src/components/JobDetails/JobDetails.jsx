@@ -20,12 +20,12 @@ const JobDetails = () => {
     }
     return (
         
-        <div className="mb-5 mt-5">
+        <div className="mb-5 mt-5 ">
             <h1 className="text-4xl text-center font-bold">Job Details</h1>
 
             {/* main div */}
 
-            <div className="grid grid-cols-4 gap-3 ">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3 ">
                 {/* 4 vag and 3 vag give 1st div and 1 vag give 2nd div */}
 
                 {/* 1st div */}

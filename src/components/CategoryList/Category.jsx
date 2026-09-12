@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import account from '../../assets/icons/accounts.png'
-import calender from '../../assets/icons/calendar.png'
-import chip from '../../assets/icons/chip.png'
-import cretive from '../../assets/icons/creative.png'
+
 const Category = () => {
     const [categoriess, setCategories] = useState([]);
     useEffect(() => {
@@ -14,7 +11,7 @@ const Category = () => {
         <div className="mt-10 ">
             <div className="  p-2 rounded-lg ">
                 <h1 className="text-4xl font-bold text-center">Job Category</h1>
-                <div className="grid grid-cols-4 gap-5 mt-8 ">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-8 ">
                     {
                         categoriess.map(categories =>
                             <span key={categories.id}>

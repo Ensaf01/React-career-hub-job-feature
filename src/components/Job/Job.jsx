@@ -17,15 +17,16 @@ const Job = ({ job }) => {
                 <button className="border-2 border-blue-800 mr-3 p-1 rounded-xl text-blue-500">{job_type}</button>
             </div>
             <div className='grid grid-cols-2 mt-5'>
-                <div className='flex'>
-                    <img src={loc} alt="" /> <p>{location}</p>
+                <div className='grid'>
+                    <img src={loc} alt="" />
+                     <p>{location}</p>
                 </div>
-                <div className='flex'>
-                    <img src={sala} alt="" />
+                <div className='gird '>
+                    <div><img src={sala} alt="" /></div>
                     <p>{salary}</p>
                 </div>
             </div>
-            <Link to={`job/${id}`}>
+            <Link to={`/job/${id}`}>
                 <button 
                     className='bg-indigo-500 opacity-75 p-2 rounded-xl mt-5 text-white font-semibold'>View Details</button>
             </Link>
